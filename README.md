@@ -16,4 +16,4 @@ module "ec2_instance" {
   endpoint_config_type = "REGIONAL"
   stage_name = "api-stage"
 }
-`
+```
