@@ -2,8 +2,8 @@ resource "aws_api_gateway_rest_api" "api_gw" {
   body = jsonencode({
     openapi = "3.0.1"
     info = {
-      title   = "api_gw"
-      version = "1.0"
+      title   = var.info_title #Need to export #api_gw
+      version = var.info_version #Need to export #1.0
     }
     paths = {
       "/path1" = {
@@ -19,10 +19,10 @@ resource "aws_api_gateway_rest_api" "api_gw" {
     }
   })
 
-  name = "api_gw"
+  name = "api_gw" #Need to export
 
   endpoint_configuration {
-    types = ["REGIONAL"]
+    types = ["REGIONAL"] #Need to export #REGIONAL
   }
 }
 
@@ -41,5 +41,5 @@ resource "aws_api_gateway_deployment" "example" {
 resource "aws_api_gateway_stage" "example" {
   deployment_id = aws_api_gateway_deployment.example.id
   rest_api_id   = aws_api_gateway_rest_api.api_gw.id
-  stage_name    = "api-stage"
+  stage_name    = var.stage_name #Need to export #api-stage
 }
