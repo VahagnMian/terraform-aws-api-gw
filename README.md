@@ -1,7 +1,7 @@
 # aws_api_gw
 
 
-Terraform module which will remove the burden of creating the underling infrastructure for EC2 instance
+api gateway module
 
 Usage Example
 
